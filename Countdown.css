@@ -1,0 +1,254 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(
+        to bottom,
+        #020111,
+        #081b33,
+        #12355b,
+        #1d4e89
+    );
+}
+
+/* ⭐ Stars */
+
+.stars{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-image:
+    radial-gradient(white 1px,transparent 1px);
+    background-size:45px 45px;
+    animation:twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle{
+
+    from{
+        opacity:.4;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+/* 🌙 Moon */
+
+.moon{
+
+    position:absolute;
+
+    top:40px;
+
+    right:60px;
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+
+    0 0 20px white,
+
+    0 0 50px white,
+
+    0 0 90px white;
+
+}
+
+/* 🎈 Balloons */
+
+.balloons{
+
+    position:absolute;
+
+    bottom:-100px;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-around;
+
+}
+
+.balloons span{
+
+    font-size:60px;
+
+    animation:fly 10s linear infinite;
+
+}
+
+.balloons span:nth-child(2){
+    animation-delay:2s;
+}
+
+.balloons span:nth-child(3){
+    animation-delay:4s;
+}
+
+.balloons span:nth-child(4){
+    animation-delay:1s;
+}
+
+.balloons span:nth-child(5){
+    animation-delay:3s;
+}
+
+@keyframes fly{
+
+    from{
+        transform:translateY(120vh);
+    }
+
+    to{
+        transform:translateY(-150vh);
+    }
+
+}
+
+/* ❤️ Hearts */
+
+.hearts::before{
+
+    content:"❤️ 💖 💕 💗 💞 💘";
+
+    position:absolute;
+
+    width:100%;
+
+    font-size:35px;
+
+    animation:hearts 15s linear infinite;
+
+}
+
+@keyframes hearts{
+
+    from{
+        transform:translateY(100vh);
+    }
+
+    to{
+        transform:translateY(-120vh);
+    }
+
+}
+
+/* Main Card */
+
+.container{
+
+    position:relative;
+
+    z-index:10;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(12px);
+
+    padding:45px;
+
+    border-radius:25px;
+
+    width:420px;
+
+    box-shadow:0 0 30px rgba(255,255,255,.25);
+
+}
+
+h2{
+
+    color:white;
+
+    margin-bottom:25px;
+
+}
+
+#count{
+
+    font-size:140px;
+
+    color:#FFD700;
+
+    font-weight:bold;
+
+    animation:zoom 1s infinite;
+
+}
+
+@keyframes zoom{
+
+0%{
+transform:scale(.8);
+}
+
+50%{
+transform:scale(1.1);
+}
+
+100%{
+transform:scale(.8);
+}
+
+}
+
+#message{
+
+    color:white;
+
+    margin-top:20px;
+
+    font-size:20px;
+
+    line-height:1.5;
+
+}
+
+/* Mobile */
+
+@media(max-width:500px){
+
+.container{
+
+width:90%;
+
+padding:30px;
+
+}
+
+#count{
+
+font-size:90px;
+
+}
+
+h2{
+
+font-size:24px;
+
+}
+
+}

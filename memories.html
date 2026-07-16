@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Beautiful Memories ❤️</title>
+
+    <link rel="stylesheet" href="memories.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ⭐ Stars -->
+    <div class="stars"></div>
+
+    <!-- 🌙 Moon -->
+    <div class="moon"></div>
+
+    <!-- ❤️ Floating Hearts -->
+    <div class="hearts"></div>
+
+    <div class="container">
+
+        <h1>💖 Our Beautiful Journey 💖</h1>
+
+        <div class="timeline">
+            <div id="memoryBox">
+                Loading beautiful memories... ❤️
+            </div>
+        </div>
+
+        <div class="progress">
+            <div id="progressBar"></div>
+        </div>
+
+        <!-- Continue Button -->
+        <button id="continueBtn" style="display:none;">
+            Continue 💌
+        </button>
+
+    </div>
+
+    <script src="memories.js"></script>
+
+    <script>
+        // Open letter page when button is clicked
+        document.getElementById("continueBtn").addEventListener("click", function () {
+            window.location.href = "letter.html";
+        });
+
+        // Show button after memories finish
+        window.onload = function () {
+            setTimeout(function () {
+                document.getElementById("continueBtn").style.display = "inline-block";
+            }, 1000); // Change this delay if needed
+        };
+    </script>
+
+</body>
+
+</html>

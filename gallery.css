@@ -1,0 +1,249 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(to bottom,#020111,#081b33,#12355b,#1d4e89);
+    min-height:100vh;
+    overflow-x:hidden;
+    color:white;
+}
+
+/* ⭐ Stars */
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-image:radial-gradient(white 1px,transparent 1px);
+    background-size:45px 45px;
+    opacity:.7;
+    animation:twinkle 3s infinite alternate;
+    z-index:-3;
+}
+
+@keyframes twinkle{
+    from{opacity:.3;}
+    to{opacity:1;}
+}
+
+/* 🌙 Moon */
+.moon{
+    position:fixed;
+    top:40px;
+    right:60px;
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    background:white;
+    box-shadow:0 0 30px white,0 0 60px white;
+    z-index:-2;
+}
+
+/* ❤️ Hearts */
+.hearts::before{
+    content:"❤️ 💖 💕 💗 💞 ❤️ 💖";
+    position:fixed;
+    width:100%;
+    font-size:30px;
+    animation:float 15s linear infinite;
+    z-index:-1;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-120vh);
+    }
+}
+
+/* Main */
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    text-align:center;
+    padding:50px 20px;
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#eeeeee;
+    margin-bottom:45px;
+    font-size:18px;
+}
+
+/* Gallery */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:35px;
+}
+
+/* Polaroid */
+
+.photo{
+
+    background:white;
+
+    padding:12px 12px 20px;
+
+    border-radius:8px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+
+    transition:.4s;
+
+    cursor:pointer;
+
+}
+
+.photo:nth-child(odd){
+    transform:rotate(-5deg);
+}
+
+.photo:nth-child(even){
+    transform:rotate(5deg);
+}
+
+.photo:hover{
+
+    transform:scale(1.08) rotate(0deg);
+
+}
+
+.photo img{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+    border-radius:5px;
+
+}
+
+.photo span{
+
+    display:block;
+
+    margin-top:12px;
+
+    color:#333;
+
+    font-weight:bold;
+
+}
+
+/* Continue Button */
+
+button{
+
+    margin-top:50px;
+
+    padding:16px 40px;
+
+    background:#ff4f91;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#ff1d73;
+
+    transform:scale(1.08);
+
+}
+
+/* Lightbox */
+
+#lightbox{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.9);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+}
+
+#bigImage{
+
+    max-width:90%;
+
+    max-height:85%;
+
+    border-radius:15px;
+
+    border:6px solid white;
+
+}
+
+#close{
+
+    position:absolute;
+
+    top:20px;
+
+    right:35px;
+
+    color:white;
+
+    font-size:50px;
+
+    cursor:pointer;
+
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    h1{
+        font-size:30px;
+    }
+
+    .photo img{
+        height:220px;
+    }
+
+    .moon{
+        width:70px;
+        height:70px;
+        right:20px;
+    }
+
+}
